@@ -52,6 +52,8 @@ pushd "$install_dir"
  	ynh_hide_warnings ./pocketbase superuser create $email $password
 popd
 
+chown -R $app:$app $install_dir/pb_data
+
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
