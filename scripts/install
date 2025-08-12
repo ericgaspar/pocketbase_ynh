@@ -43,8 +43,14 @@ ynh_config_add_systemd
 
 yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
 
+#=================================================
+# CREAT ADMIN
+#=================================================
+ynh_script_progression "Creat admin user..."
 
-./pocketbase superuser create $email $password
+pushd "$install_dir"
+ 	ynh_hide_warnings ./pocketbase superuser create $email $password
+popd
 
 #=================================================
 # START SYSTEMD SERVICE
