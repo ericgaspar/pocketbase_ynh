@@ -37,7 +37,7 @@ ram.runtime = "50M"
 
     [install.path]
     type = "path"
-    default = "/example"
+    default = "/pocketbase"
 
     [install.init_main_permission]
     type = "group"
@@ -71,3 +71,6 @@ ram.runtime = "50M"
 
     [resources.ports]
     main.default = 8090
+
+    [resources.apt]
+    packages = "sqlite3"
