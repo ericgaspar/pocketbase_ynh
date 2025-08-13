@@ -26,14 +26,14 @@ ynh_script_progression "Ensuring downward compatibility..."
 ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env data"
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="pb_data"
 
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Updating $app's configuration files..."
+#ynh_script_progression "Updating $app's configuration files..."
 
-ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
+#ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
